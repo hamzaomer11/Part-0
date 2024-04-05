@@ -1,8 +1,18 @@
 sequenceDiagram 
 
-browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
 activate server
-server-->>browser: [{ "content": "any gigguk fans", "date": "2023-1-1" }, ... ]
+server-->>browser: HTML code. HTTP Status Code - 304
 deactivate server
 
-Note right of browser: The server returns the new note as JSON data containing both the content of the note (content) and the timestamp (date)
+browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+activate server
+server-->>browser: The Javascript code. HTTP Status Code - 304
+deactivate server
+
+browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+activate server
+server-->>browser: Return the notes as JSON data. HTTP Status Code - 200
+deactivate server
+
+Note right of browser: The server returns the webpage, Javascript code & the existing notes.
