@@ -20,4 +20,4 @@ activate server
 server-->>browser: Return the notes as JSON data. HTTP Status Code - 200
 deactivate server
 
-Note right of browser: The server returns the webpage, Javascript code & the existing notes.
+Note right of browser: The server returns the webpage, Javascript code, the css sheet & the existing notes.
